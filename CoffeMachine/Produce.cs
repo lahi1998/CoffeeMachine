@@ -50,7 +50,7 @@ namespace CoffeMachine
 
             if (Coffee > 0)
             {
-                Cooked = "Coffee";
+                Cooked = "coffee";
             }
 
             Console.WriteLine("Cup is full of {0}", Cooked);
