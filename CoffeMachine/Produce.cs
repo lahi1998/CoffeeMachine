@@ -65,6 +65,7 @@ namespace CoffeMachine
             }
 
             Console.WriteLine("Cup is full of {0}", Cooked);
+            Thread.Sleep(1500);
             TurnOf();
         }
 
