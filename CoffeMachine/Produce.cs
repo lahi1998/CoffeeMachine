@@ -64,8 +64,7 @@ namespace CoffeMachine
                 Cooked = "tea";
             }
 
-            Console.WriteLine("Pot is full of {0}", Cooked);
-            Thread.Sleep(1500);
+            Console.WriteLine("Cup is full of {0}", Cooked);
             TurnOf();
         }
 
@@ -77,9 +76,9 @@ namespace CoffeMachine
             Console.WriteLine("Machine stops.");
             Thread.Sleep(1500);
 
-            Console.WriteLine("Pot was removed.");
+            Console.WriteLine("Cup was removed.");
             Thread.Sleep(1500);
-            Console.WriteLine("Pot was returned now empty.");
+            Console.WriteLine("New Cup Added.");
             Thread.Sleep(1500);
 
         }
