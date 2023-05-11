@@ -56,10 +56,6 @@ namespace CoffeMachine
                 Coffee = 0;
                 Console.WriteLine("remove the filter with the coffee grounds.");
             }
-            else
-            {
-                Console.WriteLine("No filter to remove.");
-            }
         }
     }
 }
