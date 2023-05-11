@@ -61,18 +61,15 @@ namespace CoffeMachine
         public void TurnOf()
         {
             Console.Clear();
-            if (Filter == true)
-            {
-                Filter = false;
-                Coffee = 0;
-                Console.WriteLine("Machine stops.");
-                Thread.Sleep(1500);
 
-                Console.WriteLine("Pot was removed.");
-                Thread.Sleep(1500);
-                Console.WriteLine("Pot was returned now empty.");
-                Thread.Sleep(1500);
-            }
+            Console.WriteLine("Machine stops.");
+            Thread.Sleep(1500);
+
+            Console.WriteLine("Pot was removed.");
+            Thread.Sleep(1500);
+            Console.WriteLine("Pot was returned now empty.");
+            Thread.Sleep(1500);
+
         }
     }
 }
