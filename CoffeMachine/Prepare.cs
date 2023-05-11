@@ -31,12 +31,18 @@ namespace CoffeMachine
             set { Filter = value; }
         }
 
-        public Prepare(int Water, int Coffee, bool Filter) 
+        public bool FILTERSTATUS
+        {
+            get { return FilterStatus; }
+            set { FilterStatus = value; }
+        }
+
+        public Prepare(int Water, int Coffee, bool Filter, bool FilterStatus) 
         {
             WATER = Water;
             COFFEE = Coffee;
             FILTER = Filter;
-
+            FILTERSTATUS = FilterStatus;
         }
        
         public void AddWater()
@@ -58,15 +64,16 @@ namespace CoffeMachine
         public void AddCoffee()
         {
             Console.Clear();
-            if (Coffee == 0)
+            if (Coffee == 0 && FilterStatus == false)
             {
                 Coffee = 250;
+                FilterStatus = true;
                 Console.WriteLine("Added {0}g of Coffee.", Coffee);
                 Thread.Sleep(1500);
             }
             else
             {
-                Console.WriteLine("There already Coffee in the filter.");
+                Console.WriteLine("There already something in the filter.");
                 Thread.Sleep(1500);
             }
         }

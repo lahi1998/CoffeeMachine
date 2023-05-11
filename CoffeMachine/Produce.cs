@@ -50,10 +50,11 @@ namespace CoffeMachine
 
             if (Coffee > 0)
             {
-                Cooked = "Coffee";
+                Cooked = "coffee";
             }
 
-            Console.WriteLine("Pot is full of {0}", Cooked);
+            Console.WriteLine("Cup is full of {0}", Cooked);
+            Thread.Sleep(1500);
             TurnOf();
         }
 
@@ -61,18 +62,15 @@ namespace CoffeMachine
         public void TurnOf()
         {
             Console.Clear();
-            if (Filter == true)
-            {
-                Filter = false;
-                Coffee = 0;
-                Console.WriteLine("Machine stops.");
-                Thread.Sleep(1500);
 
-                Console.WriteLine("Pot was removed.");
-                Thread.Sleep(1500);
-                Console.WriteLine("Pot was returned now empty.");
-                Thread.Sleep(1500);
-            }
+            Console.WriteLine("Machine stops.");
+            Thread.Sleep(1500);
+
+            Console.WriteLine("Cup was removed.");
+            Thread.Sleep(1500);
+            Console.WriteLine("New Cup Added.");
+            Thread.Sleep(1500);
+
         }
     }
 }
