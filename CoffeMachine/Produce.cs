@@ -58,10 +58,12 @@ namespace CoffeMachine
             if (Coffee > 0)
             {
                 Cooked = "coffee";
+
             }
             if ( Tea > 0)
             {
                 Cooked = "tea";
+
             }
 
             Console.WriteLine("Cup is full of {0}", Cooked);
