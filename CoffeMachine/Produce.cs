@@ -28,14 +28,21 @@ namespace CoffeMachine
             set { Filter = value; }
         }
 
+        public int TEA
+        {
+            get { return Tea; }
+            set { Tea = value; }
+        }
+
         private string? Cooked;
 
-        public Produce(int Water, int Coffee, bool Filter)
+
+        public Produce(int Water, int Coffee, int Tea, bool Filter)
         {
             WATER = Water;
             COFFEE = Coffee;
+            TEA = Tea;
             FILTER = Filter;
-
         }
 
         public void TurnOn()
@@ -50,10 +57,15 @@ namespace CoffeMachine
 
             if (Coffee > 0)
             {
-                Cooked = "Coffee";
+                Cooked = "coffee";
+            }
+            if ( Tea > 0)
+            {
+                Cooked = "tea";
             }
 
             Console.WriteLine("Pot is full of {0}", Cooked);
+            Thread.Sleep(1500);
             TurnOf();
         }
 
