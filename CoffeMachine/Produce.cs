@@ -34,15 +34,22 @@ namespace CoffeMachine
             set { Tea = value; }
         }
 
+        public int ESPRESSO
+        {
+            get { return Espresso; }
+            set { Espresso = value; }
+        }
+
         private string? Cooked;
 
 
-        public Produce(int Water, int Coffee, int Tea, bool Filter)
+        public Produce(int Water, int Coffee, int Tea, int Espresso, bool Filter)
         {
             WATER = Water;
             COFFEE = Coffee;
             TEA = Tea;
             FILTER = Filter;
+            ESPRESSO = Espresso;
         }
 
         public void TurnOn()
@@ -64,6 +71,10 @@ namespace CoffeMachine
             {
                 Cooked = "tea";
 
+            }
+            if (Espresso > 0)
+            {
+                Cooked = "espresso";
             }
 
             Console.WriteLine("Cup is full of {0}", Cooked);

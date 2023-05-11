@@ -38,12 +38,18 @@ namespace CoffeMachine
             set { Tea = value; }
         }
 
+        public int ESPRESSO
+        {
+            get { return Espresso; }
+            set { Espresso = value; }
+        }
 
-        public Reset(int Water, int Coffee, int Tea, bool Filter, bool FilterStatus)
+        public Reset(int Water, int Coffee, int Tea, int Espresso, bool Filter, bool FilterStatus)
         {
             WATER = Water;
             COFFEE = Coffee;
             TEA = Tea;
+            ESPRESSO = Espresso;
             FILTER = Filter;
             FILTERSTATUS = FilterStatus;
         }
@@ -82,6 +88,14 @@ namespace CoffeMachine
                 FilterStatus = false;
                 Tea = 0;
                 Console.WriteLine("remove the filter with the tea grounds.");
+                Thread.Sleep(1500);
+            }
+            if (Filter == true && Espresso != 0)
+            {
+                Filter = false;
+                FilterStatus = false;
+                Espresso = 0;
+                Console.WriteLine("remove the filter with the espresso grounds.");
                 Thread.Sleep(1500);
             }
 

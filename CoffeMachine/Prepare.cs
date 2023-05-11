@@ -37,12 +37,18 @@ namespace CoffeMachine
             get { return Tea; }
             set { Tea = value; }
         }
+        public int ESPRESSO
+        {
+            get { return Espresso; }
+            set { Espresso = value; }
+        }
 
-        public Prepare(int Water, int Coffee, int Tea, bool Filter, bool FilterStatus) 
+        public Prepare(int Water, int Coffee, int Tea, int Espresso, bool Filter, bool FilterStatus) 
         {
             WATER = Water;
             COFFEE = Coffee;
             TEA = Tea;
+            ESPRESSO = Espresso;
             FILTER = Filter;
             FILTERSTATUS = FilterStatus;
         }
@@ -88,6 +94,23 @@ namespace CoffeMachine
                 Tea = 250;
                 FilterStatus = true;
                 Console.WriteLine("Added {0}g of tea.", Tea);
+                Thread.Sleep(1500);
+            }
+            else
+            {
+                Console.WriteLine("There already something in the filter.");
+                Thread.Sleep(1500);
+            }
+        }
+
+        public void AddEspresso()
+        {
+            Console.Clear();
+            if (Espresso == 0 && FilterStatus == false)
+            {
+                Espresso = 25;
+                FilterStatus = true;
+                Console.WriteLine("Added {0}g of espresso.", Espresso);
                 Thread.Sleep(1500);
             }
             else

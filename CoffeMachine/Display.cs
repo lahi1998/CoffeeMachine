@@ -18,7 +18,8 @@ namespace CoffeMachine
             Console.WriteLine("4 : Remove filter");
             Console.WriteLine("5 : Add coffee");
             Console.WriteLine("6 : Add tea");
-            Console.WriteLine("7 : Turn On");
+            Console.WriteLine("7 : Add espresso");
+            Console.WriteLine("8 : Turn On");
         }
     }
 }
