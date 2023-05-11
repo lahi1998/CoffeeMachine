@@ -5,20 +5,49 @@
 
 // sluk
 
-Prepare p = new Prepare(0, 0, false);
 Reset r = new Reset(0, 0, false);
+Prepare p = new Prepare(0, 0, false);
 Produce pd = new Produce(0, 0, false);
+Display d = new Display();
 
-p.AddWater();
+while (true)
+{
 
-p.AddFilter();
+    d.Menu();
 
-p.AddCoffee();
+    var input = Console.ReadKey();
 
-Console.WriteLine(p.WATER+ " " + r.WATER + " " +pd.WATER);
+    switch (input.Key)
+    {
+        case ConsoleKey.D1:
+            p.AddWater();
+            break;
+
+        case ConsoleKey.D2:
+            r.RemoveWater();
+            break;
+
+        case ConsoleKey.D3:
+            p.AddFilter();
+            break;
+
+        case ConsoleKey.D4:
+            r.RemoveFilter();
+            break;
+
+        case ConsoleKey.D5:
+            p.AddCoffee();
+            break;
+
+        case ConsoleKey.D6:
+            pd.TurnOn();
+            break;
+    }
+}
 
 
-pd.TurnOn();
 
-Console.WriteLine(pd.WATER);
+
+
+
 

@@ -41,40 +41,44 @@ namespace CoffeMachine
        
         public void AddWater()
         {
+            Console.Clear();
             if (Water == 0) 
             {
                 Water = 500;
                 Console.WriteLine("Added {0}ml of water.", Water);
+                Thread.Sleep(1500);
             }
             else
             {
                 Console.WriteLine("There already water in the tank.");
+                Thread.Sleep(1500);
             }
         }
 
         public void AddCoffee()
         {
+            Console.Clear();
             if (Coffee == 0)
             {
                 Coffee = 250;
                 Console.WriteLine("Added {0}g of Coffee.", Coffee);
+                Thread.Sleep(1500);
             }
             else
             {
                 Console.WriteLine("There already Coffee in the filter.");
+                Thread.Sleep(1500);
             }
         }
 
         public void AddFilter() 
         {
+            Console.Clear();
             if (Filter == false)
             {
                 Filter = true;
                 Console.WriteLine("Added a filter.");
-            }
-            else
-            {
-                Console.WriteLine("Changed the filter.");
+                Thread.Sleep(1500);
             }
         }
 

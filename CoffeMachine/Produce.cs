@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.PortableExecutable;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -26,6 +28,8 @@ namespace CoffeMachine
             set { Filter = value; }
         }
 
+        private string? Cooked;
+
         public Produce(int Water, int Coffee, bool Filter)
         {
             WATER = Water;
@@ -36,30 +40,38 @@ namespace CoffeMachine
 
         public void TurnOn()
         {
-            Console.WriteLine("Coffee machine starts.");
+            Console.Clear();
+            Console.WriteLine("Machine starts.");
+            Thread.Sleep(1500);
             Console.WriteLine("Brrrrr brrr brr brr.");
-            Thread.Sleep(20000);
+            Thread.Sleep(1500);
 
             Water = 0;
 
-            Console.WriteLine("Coffe pot is full.");
-            Thread.Sleep(2000);
+            if (Coffee > 0)
+            {
+                Cooked = "Coffee";
+            }
+
+            Console.WriteLine("Pot is full of {0}", Cooked);
             TurnOf();
         }
 
 
         public void TurnOf()
         {
+            Console.Clear();
             if (Filter == true)
             {
                 Filter = false;
                 Coffee = 0;
-                Console.WriteLine("Coffee machine stops.");
-            }
-            else
-            {
-                Console.WriteLine("Coffe pot was removed.");
-                Console.WriteLine("Coffe pot was returned now empty.");
+                Console.WriteLine("Machine stops.");
+                Thread.Sleep(1500);
+
+                Console.WriteLine("Pot was removed.");
+                Thread.Sleep(1500);
+                Console.WriteLine("Pot was returned now empty.");
+                Thread.Sleep(1500);
             }
         }
     }
