@@ -10,6 +10,7 @@ namespace CoffeMachine
     {
         protected static int Water;
         protected static int Coffee;
+        protected static int Tea;
         protected static bool Filter;
         protected static bool FilterStatus;
     }

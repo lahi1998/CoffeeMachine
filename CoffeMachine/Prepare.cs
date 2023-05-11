@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoffeMachine
 {
-    // fyld vand
 
-    // skift filter
-
-    // tilføj kaffe
     internal class Prepare : CoffeeMachine
     {
         public int WATER
@@ -36,11 +32,17 @@ namespace CoffeMachine
             get { return FilterStatus; }
             set { FilterStatus = value; }
         }
+        public int TEA
+        {
+            get { return Tea; }
+            set { Tea = value; }
+        }
 
-        public Prepare(int Water, int Coffee, bool Filter, bool FilterStatus) 
+        public Prepare(int Water, int Coffee, int Tea, bool Filter, bool FilterStatus) 
         {
             WATER = Water;
             COFFEE = Coffee;
+            TEA = Tea;
             FILTER = Filter;
             FILTERSTATUS = FilterStatus;
         }
@@ -78,6 +80,23 @@ namespace CoffeMachine
             }
         }
 
+        public void AddTea()
+        {
+            Console.Clear();
+            if (Tea == 0 && FilterStatus == false)
+            {
+                Tea = 250;
+                FilterStatus = true;
+                Console.WriteLine("Added {0}g of tea.", Tea);
+                Thread.Sleep(1500);
+            }
+            else
+            {
+                Console.WriteLine("There already something in the filter.");
+                Thread.Sleep(1500);
+            }
+        }
+
         public void AddFilter() 
         {
             Console.Clear();
@@ -85,6 +104,11 @@ namespace CoffeMachine
             {
                 Filter = true;
                 Console.WriteLine("Added a filter.");
+                Thread.Sleep(1500);
+            }
+            else
+            {
+                Console.WriteLine("Already a filter in the machine");
                 Thread.Sleep(1500);
             }
         }
