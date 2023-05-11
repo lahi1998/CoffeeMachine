@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoffeMachine
 {
-    // fyld vand
 
-    // skift filter
-
-    // tilføj kaffe
     internal class Prepare : CoffeeMachine
     {
         public int WATER
