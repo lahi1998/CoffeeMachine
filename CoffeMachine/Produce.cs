@@ -61,10 +61,6 @@ namespace CoffeMachine
             Thread.Sleep(1500);
 
             Water = 0;
-            if (Espresso > 0)
-            {
-                Cooked = "espresso";
-            }
 
             if (Coffee > 0)
             {
@@ -73,6 +69,10 @@ namespace CoffeMachine
             if ( Tea > 0)
             {
                 Cooked = "tea";
+            }
+            if (Espresso > 0)
+            {
+                Cooked = "espresso";
             }
 
             Console.WriteLine("Cup is full of {0}", Cooked);
